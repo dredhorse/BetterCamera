@@ -27,7 +27,7 @@ namespace Perspective
 
         void Update()
         {
-            if (Input.GetMouseButton(2) || Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetMouseButton(2) || Input.GetKey(KeyCode.LeftControl))
             {
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
