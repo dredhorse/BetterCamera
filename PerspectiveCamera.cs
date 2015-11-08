@@ -8,7 +8,7 @@ namespace Perspective
         public float ClimbSpeed = 4;
         public float NormalMoveSpeed = 10;
 
-        private float _rotationX;
+        private float _rotationX = 90;
         private float _rotationY;
 
         private CharacterController _cc;
