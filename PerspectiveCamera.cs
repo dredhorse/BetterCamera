@@ -27,13 +27,18 @@ namespace Perspective
 
         void Update()
         {
+            
+        }
+
+        void FixedUpdate()
+        {
             if (Input.GetMouseButton(2) || Input.GetKey(KeyCode.LeftControl))
             {
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
 
-                _rotationX += Input.GetAxis("Mouse X") * CameraSensitivity * Time.deltaTime;
-                _rotationY += Input.GetAxis("Mouse Y") * CameraSensitivity * Time.deltaTime;
+                _rotationX += Input.GetAxis("Mouse X") * CameraSensitivity * Time.fixedDeltaTime;
+                _rotationY += Input.GetAxis("Mouse Y") * CameraSensitivity * Time.fixedDeltaTime;
                 _rotationY = Mathf.Clamp(_rotationY, -90, 90);
             }
             else
@@ -56,7 +61,7 @@ namespace Perspective
             if (Input.GetKey(KeyCode.E))
                 pos -= transform.up * ClimbSpeed;
 
-            _cc.Move(pos * Time.deltaTime);
+            _cc.Move(pos * Time.fixedDeltaTime);
         }
     }
 }
