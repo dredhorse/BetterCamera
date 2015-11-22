@@ -21,7 +21,7 @@ namespace Perspective
 
             _cc = gameObject.AddComponent<CharacterController>();
             _cc.radius = 0.1f;
-            _cc.height = 0.5f;
+            _cc.height = 0.4f;
             _cc.center = new Vector3(0, 0, 0);
         }
 
