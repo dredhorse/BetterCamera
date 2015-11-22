@@ -47,8 +47,8 @@ namespace Perspective
 
         public void onDisabled()
         {
-            Object.Destroy(Camera.main.gameObject.GetComponent<PerspectiveCamera>());
-            Object.Destroy(Camera.main.gameObject.GetComponent<CharacterController>());
+            Object.DestroyImmediate(Camera.main.gameObject.GetComponent<PerspectiveCamera>());
+            Object.DestroyImmediate(Camera.main.gameObject.GetComponent<CharacterController>());
             Camera.main.gameObject.AddComponent<CameraController>();
         }
 
