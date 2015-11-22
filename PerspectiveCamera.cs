@@ -47,7 +47,7 @@ namespace Perspective
 
             Vector3 pos = new Vector3();
 
-            pos += transform.forward * NormalMoveSpeed * Input.GetAxis("Vertical");
+            pos += transform.forward * NormalMoveSpeed * (Input.GetAxis("Vertical") + Mathf.Clamp(-Input.GetAxis("Mouse ScrollWheel"), -2, 2));
             pos += transform.right * NormalMoveSpeed * Input.GetAxis("Horizontal");
 
             if (Input.GetKey(KeyCode.Q))
