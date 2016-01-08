@@ -54,5 +54,6 @@ namespace Perspective
 
         public string Name { get { return "Perspective"; } }
         public string Description { get { return "Perspective camera"; } }
+        public string Identifier { get; set; }
     }
 }
