@@ -29,8 +29,6 @@ namespace BetterCameras
 		public float MinTilt;
 		public float MaxTilt;
 
-		/**public Func<float, float, float> GetTerrainHeight; **/
-
 		public bool TerrainHeightViaPhysics;
 		public LayerMask TerrainPhysicsLayerMask;
 
@@ -47,8 +45,6 @@ namespace BetterCameras
 		public Action<Transform> OnEndFollow;
 
 		public bool ShowDebugCameraTarget;
-
-
 
 		private Vector3 _initialLookAt;
 		private float _initialDistance;
@@ -70,6 +66,8 @@ namespace BetterCameras
 		private BetterPerspectiveCameraKeys KeysScript;
 		private BetterPerspectiveCameraMouse MouseScript;
 		public Camera camera;
+
+		public Rect windowRect = new Rect(5, 70, 250, 400);
 
 
 		public void Reset()
@@ -160,6 +158,11 @@ namespace BetterCameras
 			{
 				ShowSettings = !ShowSettings;
 			}
+			if (ShowSettings && Input.GetKey(KeyCode.Escape))
+			{
+				ShowSettings = false;
+			}
+
 			if (Input.GetMouseButton(2) || Input.GetKey(KeyCode.LeftControl))
 			{
 				Cursor.visible = false;
@@ -337,7 +340,7 @@ namespace BetterCameras
 				}
 			}
 		}
-		public Rect windowRect = new Rect(5, 70, 250, 400);
+
 		void OnGUI()
 		{
 			if (ShowSettings)
