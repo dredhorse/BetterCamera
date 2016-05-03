@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace BetterCamera
+namespace BetterCameras
 {
     public class Main : IMod
     {

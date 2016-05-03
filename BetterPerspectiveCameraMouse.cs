@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace BetterCamera
+namespace BetterCameras
 {
 	class BetterPerspectiveCameraMouse : MonoBehaviour
 	{

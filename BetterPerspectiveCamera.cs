@@ -3,7 +3,7 @@ using UnityEngine;
 using System;
 using System.Collections;
 
-namespace BetterCamera
+namespace BetterCameras
 {
 	public class BetterPerspectiveCamera : CameraController
 	{
@@ -74,10 +74,6 @@ namespace BetterCamera
 
 		public void Reset()
 		{
-
-
-
-
 			Smoothing = true;
 			Smoothness = 7f;
 
@@ -85,7 +81,6 @@ namespace BetterCamera
 			LookAtHeightOffset = .2f;
 			TerrainHeightViaPhysics = true;
 			TerrainPhysicsLayerMask = 1 << 12;
-			/** GetTerrainHeight = null; **/
 
 			TargetVisbilityViaPhysics = false;
 			CameraRadius = 1f;
@@ -143,8 +138,7 @@ namespace BetterCamera
 
 				GetComponent<Rigidbody>().freezeRotation = true;
 			}
-
-
+				
 			_initialLookAt = LookAt;
 			_initialDistance = Distance;
 			_initialRotation = Rotation;
@@ -456,12 +450,6 @@ namespace BetterCamera
 
 		private float GetHeightAt(float x, float z)
 		{
-
-			/**if (GetTerrainHeight != null)
-			{
-				return GetTerrainHeight(x, z);
-			} **/
-
 
 			if (TerrainHeightViaPhysics)
 			{

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace BetterCamera
+namespace BetterCameras
 {
 	public class BetterPerspectiveCameraKeys : MonoBehaviour
 	{
