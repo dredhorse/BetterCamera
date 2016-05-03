@@ -1,7 +1,7 @@
 {
     "BaseDir": "",
-    "EntryPoint": "Perspective.Main",
+    "EntryPoint": "BetterCamera.Main",
     "IsDevelopment": true,
-    "Name": "Perspective",
-    "Project": "Perspective.csproj"
+    "Name": "BetterCamera",
+    "Project": "BetterCamera.csproj"
 }

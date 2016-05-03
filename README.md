@@ -1,3 +1,3 @@
-# Perspective
+# Better Camera
 
-A flying perspective camera for parkitect!
+A better camera for parkitect!

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Perspective
+namespace BetterCamera
 {
     public class Main : IMod
     {
@@ -40,19 +40,19 @@ namespace Perspective
             cam.useOcclusionCulling = cam2.useOcclusionCulling;
 
             Object.DestroyImmediate(cam.gameObject.GetComponent<CameraController>());
-            Camera.main.gameObject.AddComponent<PerspectiveCamera>();
+            Camera.main.gameObject.AddComponent<BetterCamera>();
 
             Object.Destroy(go);
         }
 
         public void onDisabled()
         {
-            Object.DestroyImmediate(Camera.main.gameObject.GetComponent<PerspectiveCamera>());
+            Object.DestroyImmediate(Camera.main.gameObject.GetComponent<BetterCamera>());
             Object.DestroyImmediate(Camera.main.gameObject.GetComponent<CharacterController>());
             Camera.main.gameObject.AddComponent<CameraController>();
         }
 
-        public string Name { get { return "Perspective"; } }
+        public string Name { get { return "BetterCamera"; } }
         public string Description { get { return "Perspective camera"; } }
         public string Identifier { get; set; }
     }

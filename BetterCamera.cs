@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 
-namespace Perspective
+namespace BetterCamera
 {
-    class PerspectiveCamera : CameraController
+    class BetterCamera : CameraController
     {
-        public float CameraSensitivity = 90;
-        public float ClimbSpeed = 4;
+        public float CameraSensitivity = 45;
+        public float ClimbSpeed = 5;
         public float NormalMoveSpeed = 10;
 
         private float _rotationX = 90;
         private float _rotationY;
+		private Vector3 pos;
+
 
         private CharacterController _cc;
 
@@ -32,6 +34,8 @@ namespace Perspective
 
         void FixedUpdate()
         {
+			pos = new Vector3();
+
             if (Input.GetMouseButton(2) || Input.GetKey(KeyCode.LeftControl))
             {
                 Cursor.visible = false;
@@ -45,17 +49,18 @@ namespace Perspective
             {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
+
             }
+
+
 
             transform.localRotation = Quaternion.AngleAxis(_rotationX, Vector3.up);
             transform.localRotation *= Quaternion.AngleAxis(_rotationY, Vector3.left);
 
-            Vector3 pos = new Vector3();
-
             pos += transform.forward * NormalMoveSpeed * (Input.GetAxis("Vertical") + Mathf.Clamp(-Input.GetAxis("Mouse ScrollWheel"), -2, 2));
             pos += transform.right * NormalMoveSpeed * Input.GetAxis("Horizontal");
 
-            if (Input.GetKey(KeyCode.Q))
+			if (Input.GetKey(KeyCode.Q))
                 pos += transform.up * ClimbSpeed;
 
             if (Input.GetKey(KeyCode.E))
